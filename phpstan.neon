@@ -1,0 +1,20 @@
+
+includes:
+    - ./vendor/phpstan/phpstan/conf/bleedingEdge.neon
+    - ./vendor/phpstan/phpstan-deprecation-rules/rules.neon
+    - ./vendor/nunomaduro/larastan/extension.neon
+    - ./vendor/tomasvotruba/bladestan/config/extension.neon
+
+parameters:
+    level: max
+    paths:
+        - src
+    bladestan:
+        template_paths:
+            - resources/views
+    ignoreErrors: []
+    excludePaths:
+        - bootstrap/cache/*
+        - storage/*
+    bootstrapFiles:
+        - vendor/nunomaduro/larastan/bootstrap.php
